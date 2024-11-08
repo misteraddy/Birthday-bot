@@ -41,7 +41,7 @@ bot.start(async (ctx) => {
   }
 
   await ctx.reply(
-    `Hey ${from.first_name}! 🎉 Welcome! I'm here to keep track of important birthdays for you. Just add birthdays to my list, and I'll make sure you never miss a celebration. Let’s make every birthday special! 🎂`
+    `Hey ${from.first_name}! 🎉 Welcome! I'm here to keep track of important birthdays for you. Just add birthdays to my list, and I'll make sure you never miss a celebration. Let’s make every birthday special! 🎂 /add <name> <YYYY-MM-DD> use this command to add the birthdays`
   );
 });
 
