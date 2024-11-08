@@ -4,6 +4,7 @@ const connectDB = require("./src/config/db");
 const userModel = require("./src/models/User");
 const birthdayModel = require("./src/models/Birthday");
 const cron = require("node-cron");
+const http = require("http"); // Import http module
 
 dotenv.config();
 
@@ -161,3 +162,9 @@ bot.launch();
 // Enable graceful stop
 process.once("SIGINT", () => bot.stop("SIGINT"));
 process.once("SIGTERM", () => bot.stop("SIGTERM"));
+
+// Dummy HTTP server to keep Render happy
+const PORT = process.env.PORT || 3000;
+http.createServer((req, res) => res.end("Bot is running")).listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
+});
